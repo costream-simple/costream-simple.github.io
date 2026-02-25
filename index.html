@@ -3,24 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="CoStream combines LLMs, VLMs, and world models with tactile sensing for contact-rich robotic manipulation achieving 96.7% success rate and sub-millimeter precision.">
+  <meta name="keywords" content="CoStream, Multi-Modal Manipulation, Foundation Models, Tactile Sensing, Contact-Rich Assembly, RSS 2026">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>CoStream: Compositional Multi-Stream Framework for Multi-Modal Manipulation</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -52,33 +39,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
     </div>
-
   </div>
 </nav>
 
@@ -88,39 +49,13 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
-          </div>
+          <h1 class="title is-1 publication-title">CoStream: Compositional Multi-Stream Framework for Multi-Modal Manipulation</h1>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="./_RSS_2026__CoStream.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -128,44 +63,6 @@
                   <span>Paper</span>
                 </a>
               </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
             </div>
 
           </div>
@@ -179,13 +76,11 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
+        <source src="./static/videos/perturbs/cpu_perturb_2_4x.mp4"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        <span class="costream">CoStream</span> demonstrates robust contact-rich manipulation with real-time recovery from external perturbations during CPU, GPU, and RAM component assembly.
       </h2>
     </div>
   </div>
@@ -196,51 +91,39 @@
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
+        <div class="item item-cpu">
+          <video poster="" id="cpu" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/perturbs/cpu_perturb_2_4x.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
+        <div class="item item-gpu">
+          <video poster="" id="gpu" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/perturbs/gpu_perturb_2_4x.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
+        <div class="item item-ram">
+          <video poster="" id="ram" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/perturbs/ram_perturb_1_4x.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
+        <div class="item item-gpu-failure">
+          <video poster="" id="gpu-failure" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/perturbs/gpu_perturb_failure_4x.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
+        <div class="item item-human1">
+          <video poster="" id="human1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/human/mb_human_sideview_2.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
+        <div class="item item-human2">
+          <video poster="" id="human2" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/human/mb_human_2.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -258,48 +141,34 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Long-horizon contact-rich manipulation tasks demand that robots bridge the gap between slow, deliberate planning and high-frequency, reactive control. Classical pipelines struggle with the brittle modularity of hand-engineered components, whereas monolithic end-to-end policies lack the flexibility to recombine learned skills for new scenarios or compositional generalization.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            We propose <span class="costream">CoStream</span>, a multi-stream architecture that combines foundation models (LLMs, VLMs, world models) with complementary modalities (vision, language, force) to achieve compositional generalization. These streams function as autonomous, parallel processes that generate different forms of complementary, non-blocking information: the semantic stream applies abstract reasoning for task decomposition and constraint specification, the visual imagination stream utilizes world models to generate trajectories, and the reactive stream generates high-frequency compliant corrective behaviors during physical contact.
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Outputs are integrated into a final action through the multiplexing of object-centric transformations. This compositional design enables reuse of modules across different abstraction levels while maintaining closed-loop stability and asynchronous reactivity even when high-level semantic reasoning or visual imagination introduce large computational latency.
+          </p>
+          <p>
+            We validate <span class="costream">CoStream</span> on long-horizon contact-rich assembly tasks including RAM, CPU, and GPU motherboard component insertion and drill insertion. Our approach substantially outperforms prior methods, achieving a <strong>96.7% mean success rate</strong> with <strong>sub-millimeter (0.5 mm) precision</strong> and demonstrates robustness through recovery against external human perturbations during execution.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
+    <!-- Method Overview. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            <span class="costream">CoStream</span> decomposes manipulation into three parallel streams: <strong>Semantic</strong> (LLMs/VLMs for task decomposition), <strong>Visual</strong> (world models for trajectory generation), and <strong>Reactive</strong> (tactile/force feedback for compliant control). Streams synchronize through object-centric transformation composition.
+          </p>
         </div>
       </div>
     </div>
-    <!--/ Paper video. -->
+    <!--/ Method Overview. -->
   </div>
 </section>
 
@@ -309,33 +178,60 @@
 
     <div class="columns is-centered">
 
-      <!-- Visual Effects. -->
+      <!-- Quantitative Results. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+          <h2 class="title is-3">Quantitative Results</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            <span class="costream">CoStream</span> achieves high success rates across all contact-rich manipulation tasks:
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
+          <table style="width: 100%; margin-top: 1em; border-collapse: collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid #333;">
+                <th style="padding: 0.5em; text-align: left;">Task</th>
+                <th style="padding: 0.5em; text-align: center;">Success Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 0.5em;">Drill Insertion</td>
+                <td style="padding: 0.5em; text-align: center;"><strong>15/15 (100%)</strong></td>
+              </tr>
+              <tr style="background-color: #f5f5f5;">
+                <td style="padding: 0.5em;">RAM Insertion</td>
+                <td style="padding: 0.5em; text-align: center;">14/15 (93.3%)</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.5em;">CPU Placement</td>
+                <td style="padding: 0.5em; text-align: center;">14/15 (93.3%)</td>
+              </tr>
+              <tr style="background-color: #f5f5f5;">
+                <td style="padding: 0.5em;">GPU Insertion</td>
+                <td style="padding: 0.5em; text-align: center;"><strong>15/15 (100%)</strong></td>
+              </tr>
+              <tr style="border-top: 2px solid #333;">
+                <td style="padding: 0.5em;"><strong>Mean Success</strong></td>
+                <td style="padding: 0.5em; text-align: center;"><strong>96.7%</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 1em;">
+            Sub-millimeter precision: <strong>0.5mm clearance</strong> for drill insertion
+          </p>
         </div>
       </div>
-      <!--/ Visual Effects. -->
+      <!--/ Quantitative Results. -->
 
-      <!-- Matting. -->
+      <!-- Robustness. -->
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
+        <h2 class="title is-3">Robustness</h2>
         <div class="columns is-centered">
           <div class="column content">
             <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
+              Real-time recovery from external perturbations during RAM component assembly.
             </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
+            <video id="robustness-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/perturbs/ram_perturb_1.mp4"
                       type="video/mp4">
             </video>
           </div>
@@ -343,94 +239,74 @@
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
+    <!--/ Robustness. -->
 
-    <!-- Animation. -->
+    <!-- Perturbation Analysis. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+        <h2 class="title is-3">Robustness to Human Perturbations</h2>
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            <span class="costream">CoStream</span>'s reactive stream provides real-time corrections maintaining task objectives defined by semantic and visual streams, even when faced with external perturbations during execution.
           </p>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
 
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
+        <div class="columns">
+          <div class="column">
+            <h3 class="title is-4">CPU Perturbation</h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/perturbs/cpu_perturb_2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column">
+            <h3 class="title is-4">GPU Perturbation</h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/perturbs/gpu_perturb_2.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
+
+        <div class="columns">
+          <div class="column">
+            <h3 class="title is-4">RAM Perturbation</h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/perturbs/ram_perturb_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column">
+            <h3 class="title is-4">GPU Failure Analysis</h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/perturbs/gpu_perturb_failure.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
-        <!--/ Re-rendering. -->
 
       </div>
     </div>
-    <!--/ Animation. -->
+    <!--/ Perturbation Analysis. -->
 
 
     <!-- Concurrent Work. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
+        <h2 class="title is-3">Related Work</h2>
 
         <div class="content has-text-justified">
           <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
+            <span class="costream">CoStream</span> builds on recent advances in foundation models for robotics and contact-rich manipulation.
           </p>
           <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+            <strong>Foundation Models in Robotics:</strong> Recent work has explored using large language models and vision-language models for robot control, including <a href="https://voxposer.github.io/">VoxPoser</a> for compositional manipulation and RT-1 for generalist robotics policies.
           </p>
           <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
+            <strong>Contact-Rich Manipulation:</strong> Tactile sensing and force control have been explored for precision manipulation tasks, with methods leveraging GelSight sensors and compliant control strategies.
           </p>
           <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+            <strong>Compositional Approaches:</strong> Task and Motion Planning (TAMP) and modular policy architectures provide structured approaches to decompose complex manipulation tasks, though they often require extensive manual engineering.
           </p>
           <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+            <strong>World Models for Robotics:</strong> Video generation models have recently been applied to robot planning, enabling visual imagination of future trajectories for motion planning and control.
           </p>
         </div>
       </div>
@@ -444,11 +320,12 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@inproceedings{costream2026,
+  title     = {CoStream: Compositional Multi-Stream Framework for Multi-Modal Manipulation},
+  author    = {Anonymous},
+  booktitle = {Robotics: Science and Systems (RSS)},
+  year      = {2026},
+  note      = {Under Review}
 }</code></pre>
   </div>
 </section>
@@ -458,11 +335,8 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+         href="./_RSS_2026__CoStream.pdf">
         <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
       </a>
     </div>
     <div class="columns is-centered">
