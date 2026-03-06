@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(dir /s /b \"c:\\\\Users\\\\GelSight\\\\Desktop\\\\costream-rss.github.io\\\\static\")",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(magick:*)",
+      "Bash(convert:*)"
     ]
   }
 }

@@ -49,7 +49,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">CoStream: Compositional Multi-Stream Framework for Multi-Modal Manipulation</h1>
+          <h1 class="title is-1 publication-title"><span class="costream">CoStream</span>: Compositional Multi-Stream Framework for Multi-Modal Manipulation</h1>
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -61,6 +61,15 @@
                       <i class="fas fa-file-pdf"></i>
                   </span>
                   <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark" style="cursor: default; opacity: 0.6;">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
                 </a>
               </span>
             </div>
@@ -91,39 +100,27 @@
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-drill">
+          <video poster="" id="drill" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/drill/drill_insertion_4x.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
         <div class="item item-cpu">
           <video poster="" id="cpu" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/perturbs/cpu_perturb_2_4x.mp4"
+            <source src="./static/videos/mb/cpu_2_4x.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-gpu">
           <video poster="" id="gpu" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/perturbs/gpu_perturb_2_4x.mp4"
+            <source src="./static/videos/mb/gpu_1_4x.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-ram">
           <video poster="" id="ram" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/perturbs/ram_perturb_1_4x.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-gpu-failure">
-          <video poster="" id="gpu-failure" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/perturbs/gpu_perturb_failure_4x.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-human1">
-          <video poster="" id="human1" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/human/mb_human_sideview_2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-human2">
-          <video poster="" id="human2" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/human/mb_human_2.mp4"
+            <source src="./static/videos/mb/ram_3_4x.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -166,9 +163,44 @@
             <span class="costream">CoStream</span> decomposes manipulation into three parallel streams: <strong>Semantic</strong> (LLMs/VLMs for task decomposition), <strong>Visual</strong> (world models for trajectory generation), and <strong>Reactive</strong> (tactile/force feedback for compliant control). Streams synchronize through object-centric transformation composition.
           </p>
         </div>
+        <div class="content has-text-centered" style="margin-top: 2em;">
+          <img src="./static/images/method.png" alt="CoStream Architecture" style="width: 100%; max-width: 1200px; border-radius: 10px;">
+          <p style="margin-top: 1em; font-size: 0.95em; color: #666;">
+            <strong>Figure 2: CoStream Architecture.</strong> Three parallel computational streams operate at different timescales: Semantic Modeling and Planning (LLM/VLM) decomposes tasks and specifies constraints, Visual Trajectory Generation uses world models to imagine execution videos, and Reactive Modeling and Planning provides high-frequency tactile corrections. The final control action is a unified composition of object-centric transformations from all streams.
+          </p>
+        </div>
       </div>
     </div>
     <!--/ Method Overview. -->
+
+    <!-- World Model Visualization. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Visual Trajectory Generation</h2>
+        <div class="content has-text-justified">
+          <p>
+            The visual stream uses world models to "imagine" future execution trajectories. These generated videos provide high-fidelity motion priors for smooth, object-centric manipulation.
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <h3 class="title is-4">Successful Trajectory</h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/world_model/gpu_insertion_success.mp4" type="video/mp4">
+            </video>
+            <p style="margin-top: 0.5em; font-size: 0.9em;">World model generates a valid trajectory for GPU insertion</p>
+          </div>
+          <div class="column">
+            <h3 class="title is-4">Rejected Trajectory</h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/world_model/gpu_insertion_fail1.mp4" type="video/mp4">
+            </video>
+            <p style="margin-top: 0.5em; font-size: 0.9em;">VLM filters out physically implausible trajectories</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ World Model Visualization. -->
   </div>
 </section>
 
@@ -181,36 +213,44 @@
       <!-- Quantitative Results. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Quantitative Results</h2>
+          <h2 class="title is-3">Task Performance</h2>
           <p>
             <span class="costream">CoStream</span> achieves high success rates across all contact-rich manipulation tasks:
           </p>
           <table style="width: 100%; margin-top: 1em; border-collapse: collapse;">
             <thead>
               <tr style="border-bottom: 2px solid #333;">
-                <th style="padding: 0.5em; text-align: left;">Task</th>
-                <th style="padding: 0.5em; text-align: center;">Success Rate</th>
+                <th style="padding: 0.5em; text-align: left;">Method</th>
+                <th style="padding: 0.5em; text-align: center;">Drill</th>
+                <th style="padding: 0.5em; text-align: center;">RAM</th>
+                <th style="padding: 0.5em; text-align: center;">CPU</th>
+                <th style="padding: 0.5em; text-align: center;">GPU</th>
+                <th style="padding: 0.5em; text-align: center;"><strong>Mean</strong></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td style="padding: 0.5em;">Drill Insertion</td>
-                <td style="padding: 0.5em; text-align: center;"><strong>15/15 (100%)</strong></td>
-              </tr>
               <tr style="background-color: #f5f5f5;">
-                <td style="padding: 0.5em;">RAM Insertion</td>
-                <td style="padding: 0.5em; text-align: center;">14/15 (93.3%)</td>
+                <td style="padding: 0.5em;">VoxPoser</td>
+                <td style="padding: 0.5em; text-align: center;">0/15</td>
+                <td style="padding: 0.5em; text-align: center;">0/15</td>
+                <td style="padding: 0.5em; text-align: center;">0/15</td>
+                <td style="padding: 0.5em; text-align: center;">0/15</td>
+                <td style="padding: 0.5em; text-align: center;">0.0%</td>
               </tr>
               <tr>
-                <td style="padding: 0.5em;">CPU Placement</td>
-                <td style="padding: 0.5em; text-align: center;">14/15 (93.3%)</td>
+                <td style="padding: 0.5em;">π<sub>0.5</sub></td>
+                <td style="padding: 0.5em; text-align: center;">0/15</td>
+                <td style="padding: 0.5em; text-align: center;">0/15</td>
+                <td style="padding: 0.5em; text-align: center;">0/15</td>
+                <td style="padding: 0.5em; text-align: center;">0/15</td>
+                <td style="padding: 0.5em; text-align: center;">0.0%</td>
               </tr>
-              <tr style="background-color: #f5f5f5;">
-                <td style="padding: 0.5em;">GPU Insertion</td>
-                <td style="padding: 0.5em; text-align: center;"><strong>15/15 (100%)</strong></td>
-              </tr>
-              <tr style="border-top: 2px solid #333;">
-                <td style="padding: 0.5em;"><strong>Mean Success</strong></td>
+              <tr style="border-top: 2px solid #333; background-color: #e3f2fd;">
+                <td style="padding: 0.5em;"><strong>CoStream (Ours)</strong></td>
+                <td style="padding: 0.5em; text-align: center;"><strong>15/15</strong></td>
+                <td style="padding: 0.5em; text-align: center;"><strong>14/15</strong></td>
+                <td style="padding: 0.5em; text-align: center;"><strong>14/15</strong></td>
+                <td style="padding: 0.5em; text-align: center;"><strong>15/15</strong></td>
                 <td style="padding: 0.5em; text-align: center;"><strong>96.7%</strong></td>
               </tr>
             </tbody>
@@ -218,28 +258,37 @@
           <p style="margin-top: 1em;">
             Sub-millimeter precision: <strong>0.5mm clearance</strong> for drill insertion
           </p>
+
+          <h3 class="title is-4" style="margin-top: 2em;">Ablation Study</h3>
+          <p>
+            The reactive stream is essential for sub-millimeter precision. Ablation on drill insertion task:
+          </p>
+          <table style="width: 100%; margin-top: 1em; border-collapse: collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid #333;">
+                <th style="padding: 0.5em; text-align: left;">Method</th>
+                <th style="padding: 0.5em; text-align: center;">Success Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background-color: #e3f2fd;">
+                <td style="padding: 0.5em;"><strong>CoStream (Full Framework)</strong></td>
+                <td style="padding: 0.5em; text-align: center;"><strong>15/15 (100%)</strong></td>
+              </tr>
+              <tr style="background-color: #f5f5f5;">
+                <td style="padding: 0.5em;">CoStream w/o Reactive Layer</td>
+                <td style="padding: 0.5em; text-align: center;">3/15 (20%)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 1em; font-size: 0.95em; color: #666;">
+            Removing the reactive layer causes success rate to drop from 100% to 20%, demonstrating that tactile force sensing is critical for handling sub-millimeter clearances.
+          </p>
         </div>
       </div>
       <!--/ Quantitative Results. -->
 
-      <!-- Robustness. -->
-      <div class="column">
-        <h2 class="title is-3">Robustness</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              Real-time recovery from external perturbations during RAM component assembly.
-            </p>
-            <video id="robustness-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/perturbs/ram_perturb_1.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
     </div>
-    <!--/ Robustness. -->
 
     <!-- Perturbation Analysis. -->
     <div class="columns is-centered">
@@ -274,17 +323,35 @@
               <source src="./static/videos/perturbs/ram_perturb_1.mp4" type="video/mp4">
             </video>
           </div>
-          <div class="column">
-            <h3 class="title is-4">GPU Failure Analysis</h3>
-            <video autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/perturbs/gpu_perturb_failure.mp4" type="video/mp4">
-            </video>
-          </div>
         </div>
 
       </div>
     </div>
     <!--/ Perturbation Analysis. -->
+
+    <!-- Long-Horizon Assembly. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Long-Horizon Motherboard Assembly</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            <span class="costream">CoStream</span> successfully completes the full motherboard assembly sequence, transitioning seamlessly between CPU, GPU, and RAM insertion tasks. This demonstrates compositional generalization across multiple contact-rich manipulation subtasks without task-specific retraining.
+          </p>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <video autoplay controls muted loop playsinline height="100%" style="border-radius: 10px;">
+              <source src="./static/videos/mb/mb_assembly_frontview_4x.mp4" type="video/mp4">
+            </video>
+            <p style="margin-top: 0.5em; font-size: 0.9em; text-align: center;">Full motherboard assembly sequence showing CPU, GPU, and RAM installation (4x speed)</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Long-Horizon Assembly. -->
 
 
     <!-- Concurrent Work. -->
@@ -343,16 +410,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            Website template borrowed from <a href="https://nerfies.github.io/">Nerfies</a>.
           </p>
         </div>
       </div>
