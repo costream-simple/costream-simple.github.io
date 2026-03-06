@@ -156,3 +156,29 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.venue-badge-container {
+  display: flex;
+  justify-content: center;
+}
+
+.venue-badge {
+  display: inline-block;
+  border: 2px solid #2c7bfe;
+  color: #2c7bfe;
+  border-radius: 20px;
+  padding: 0.2em 0.9em;
+  font-size: 0.85rem;
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.publication-links .button {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.publication-links .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
