@@ -228,11 +228,11 @@ body {
   background-color: #ffffff;
 }
 
-.results-table .row-highlight {
-  background-color: #e8f1ff !important;
+.results-table tbody tr.row-highlight {
+  background-color: #e8f1ff;
   border-left: 3px solid #2c7bfe;
 }
 
-.results-table .row-highlight td:first-child {
+.results-table tbody tr.row-highlight td:first-child {
   padding-left: calc(0.75em - 3px);
 }
