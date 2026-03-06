@@ -220,41 +220,41 @@
           <p>
             <span class="costream">CoStream</span> achieves high success rates across all contact-rich manipulation tasks:
           </p>
-          <table style="width: 100%; margin-top: 1em; border-collapse: collapse;">
+          <table class="results-table">
             <thead>
-              <tr style="border-bottom: 2px solid #333;">
-                <th style="padding: 0.5em; text-align: left;">Method</th>
-                <th style="padding: 0.5em; text-align: center;">Drill</th>
-                <th style="padding: 0.5em; text-align: center;">RAM</th>
-                <th style="padding: 0.5em; text-align: center;">CPU</th>
-                <th style="padding: 0.5em; text-align: center;">GPU</th>
-                <th style="padding: 0.5em; text-align: center;"><strong>Mean</strong></th>
+              <tr>
+                <th>Method</th>
+                <th>Drill</th>
+                <th>RAM</th>
+                <th>CPU</th>
+                <th>GPU</th>
+                <th><strong>Mean</strong></th>
               </tr>
             </thead>
             <tbody>
-              <tr style="background-color: #f5f5f5;">
-                <td style="padding: 0.5em;">VoxPoser</td>
-                <td style="padding: 0.5em; text-align: center;">0/15</td>
-                <td style="padding: 0.5em; text-align: center;">0/15</td>
-                <td style="padding: 0.5em; text-align: center;">0/15</td>
-                <td style="padding: 0.5em; text-align: center;">0/15</td>
-                <td style="padding: 0.5em; text-align: center;">0.0%</td>
+              <tr>
+                <td>VoxPoser</td>
+                <td>0/15</td>
+                <td>0/15</td>
+                <td>0/15</td>
+                <td>0/15</td>
+                <td>0.0%</td>
               </tr>
               <tr>
-                <td style="padding: 0.5em;">π<sub>0.5</sub></td>
-                <td style="padding: 0.5em; text-align: center;">0/15</td>
-                <td style="padding: 0.5em; text-align: center;">0/15</td>
-                <td style="padding: 0.5em; text-align: center;">0/15</td>
-                <td style="padding: 0.5em; text-align: center;">0/15</td>
-                <td style="padding: 0.5em; text-align: center;">0.0%</td>
+                <td>π<sub>0.5</sub></td>
+                <td>0/15</td>
+                <td>0/15</td>
+                <td>0/15</td>
+                <td>0/15</td>
+                <td>0.0%</td>
               </tr>
-              <tr style="border-top: 2px solid #333; background-color: #e3f2fd;">
-                <td style="padding: 0.5em;"><strong>CoStream (Ours)</strong></td>
-                <td style="padding: 0.5em; text-align: center;"><strong>15/15</strong></td>
-                <td style="padding: 0.5em; text-align: center;"><strong>14/15</strong></td>
-                <td style="padding: 0.5em; text-align: center;"><strong>14/15</strong></td>
-                <td style="padding: 0.5em; text-align: center;"><strong>15/15</strong></td>
-                <td style="padding: 0.5em; text-align: center;"><strong>96.7%</strong></td>
+              <tr class="row-highlight">
+                <td><strong>CoStream (Ours)</strong></td>
+                <td><strong>15/15</strong></td>
+                <td><strong>14/15</strong></td>
+                <td><strong>14/15</strong></td>
+                <td><strong>15/15</strong></td>
+                <td><strong>96.7%</strong></td>
               </tr>
             </tbody>
           </table>
@@ -266,21 +266,21 @@
           <p>
             The reactive stream is essential for sub-millimeter precision. Ablation on drill insertion task:
           </p>
-          <table style="width: 100%; margin-top: 1em; border-collapse: collapse;">
+          <table class="results-table">
             <thead>
-              <tr style="border-bottom: 2px solid #333;">
-                <th style="padding: 0.5em; text-align: left;">Method</th>
-                <th style="padding: 0.5em; text-align: center;">Success Rate</th>
+              <tr>
+                <th>Method</th>
+                <th>Success Rate</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="background-color: #e3f2fd;">
-                <td style="padding: 0.5em;"><strong>CoStream (Full Framework)</strong></td>
-                <td style="padding: 0.5em; text-align: center;"><strong>15/15 (100%)</strong></td>
+              <tr class="row-highlight">
+                <td><strong>CoStream (Full Framework)</strong></td>
+                <td><strong>15/15 (100%)</strong></td>
               </tr>
-              <tr style="background-color: #f5f5f5;">
-                <td style="padding: 0.5em;">CoStream w/o Reactive Layer</td>
-                <td style="padding: 0.5em; text-align: center;">3/15 (20%)</td>
+              <tr>
+                <td>CoStream w/o Reactive Layer</td>
+                <td>3/15 (20%)</td>
               </tr>
             </tbody>
           </table>
