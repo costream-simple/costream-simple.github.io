@@ -236,3 +236,35 @@ body {
 .results-table tbody tr.row-highlight td:first-child {
   padding-left: calc(0.75em - 3px);
 }
+
+/* Consistent video styling across all sections */
+section video:not(#teaser) {
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  width: 100%;
+}
+
+/* Uniform video captions */
+.video-caption {
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  color: #666;
+  text-align: center;
+}
+
+/* Section heading left accent */
+.section-accent {
+  border-left: 4px solid #2c7bfe;
+  padding-left: 0.6em;
+  margin-left: -0.6em;
+}
+
+/* Centered single video (RAM perturbation) */
+.video-centered-single {
+  display: flex;
+  justify-content: center;
+}
+
+.video-centered-single .column {
+  max-width: 60%;
+}

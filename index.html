@@ -54,6 +54,24 @@
             <span class="venue-badge">RSS 2026 &middot; Under Review</span>
           </div>
 
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Haonan Chen<sup>1</sup>,</span>
+            <span class="author-block">Yuxiang Ma<sup>2</sup>,</span>
+            <span class="author-block">Stephen Tian<sup>3</sup>,</span>
+            <span class="author-block">Xiaoshen Han<sup>1</sup>,</span>
+            <span class="author-block">Wenlong Huang<sup>3</sup>,</span>
+            <span class="author-block">Yunzhu Li<sup>3</sup>,</span>
+            <span class="author-block">Jiajun Wu<sup>3</sup>,</span>
+            <span class="author-block">Edward H. Adelson<sup>2</sup>,</span>
+            <span class="author-block">Yilun Du<sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Harvard University,</span>
+            <span class="author-block"><sup>2</sup>Massachusetts Institute of Technology,</span>
+            <span class="author-block"><sup>3</sup>Stanford University</span>
+          </div>
+
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
@@ -179,7 +197,7 @@
     <!-- World Model Visualization. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Visual Trajectory Generation</h2>
+        <h2 class="title is-3 section-accent">Visual Trajectory Generation</h2>
         <div class="content has-text-justified">
           <p>
             The visual stream uses world models to "imagine" future execution trajectories. These generated videos provide high-fidelity motion priors for smooth, object-centric manipulation.
@@ -191,14 +209,14 @@
             <video autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/world_model/gpu_insertion_success.mp4" type="video/mp4">
             </video>
-            <p style="margin-top: 0.5em; font-size: 0.9em;">World model generates a valid trajectory for GPU insertion</p>
+            <p class="video-caption">World model generates a valid trajectory for GPU insertion</p>
           </div>
           <div class="column">
             <h3 class="title is-4">Rejected Trajectory</h3>
             <video autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/world_model/gpu_insertion_fail1.mp4" type="video/mp4">
             </video>
-            <p style="margin-top: 0.5em; font-size: 0.9em;">VLM filters out physically implausible trajectories</p>
+            <p class="video-caption">VLM filters out physically implausible trajectories</p>
           </div>
         </div>
       </div>
@@ -296,7 +314,7 @@
     <!-- Perturbation Analysis. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Robustness to Human Perturbations</h2>
+        <h2 class="title is-3 section-accent">Robustness to Human Perturbations</h2>
 
         <div class="content has-text-justified">
           <p>
@@ -319,7 +337,7 @@
           </div>
         </div>
 
-        <div class="columns">
+        <div class="columns video-centered-single">
           <div class="column">
             <h3 class="title is-4">RAM Perturbation</h3>
             <video autoplay controls muted loop playsinline height="100%">
@@ -332,10 +350,42 @@
     </div>
     <!--/ Perturbation Analysis. -->
 
+    <!-- Failure Cases. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 section-accent">Failure Cases</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            While <span class="costream">CoStream</span> achieves a 96.7% mean success rate, we analyze the remaining failure cases to understand current limitations. Failures arise from two main sources: task-level perturbations that exceed the reactive stream's correction capacity, and semantic reasoning errors during multi-stage planning.
+          </p>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <h3 class="title is-4">GPU Perturbation Failure</h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/failure cases/gpu_perturb_failure_4x.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">A large-magnitude perturbation displaces the GPU beyond the reactive stream's recovery range, resulting in a failed insertion attempt.</p>
+          </div>
+          <div class="column">
+            <h3 class="title is-4">RAM LLM Stage Failure</h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/failure cases/ram_llm_stages_failure.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">An incorrect stage transition predicted by the LLM semantic stream causes the robot to proceed prematurely, resulting in a misaligned RAM insertion.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Failure Cases. -->
+
     <!-- Long-Horizon Assembly. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Long-Horizon Motherboard Assembly</h2>
+        <h2 class="title is-3 section-accent">Long-Horizon Motherboard Assembly</h2>
 
         <div class="content has-text-justified">
           <p>
@@ -348,7 +398,7 @@
             <video autoplay controls muted loop playsinline height="100%" style="border-radius: 10px;">
               <source src="./static/videos/mb/mb_assembly_frontview_4x.mp4" type="video/mp4">
             </video>
-            <p style="margin-top: 0.5em; font-size: 0.9em; text-align: center;">Full motherboard assembly sequence showing CPU, GPU, and RAM installation (4x speed)</p>
+            <p class="video-caption">Full motherboard assembly sequence showing CPU, GPU, and RAM installation (4x speed)</p>
           </div>
         </div>
 
@@ -392,10 +442,9 @@
     <h2 class="title">BibTeX</h2>
     <pre><code>@inproceedings{costream2026,
   title     = {CoStream: Compositional Multi-Stream Framework for Multi-Modal Manipulation},
-  author    = {Anonymous},
+  author    = {Chen, Haonan and Ma, Yuxiang and Tian, Stephen and Han, Xiaoshen and Huang, Wenlong and Li, Yunzhu and Wu, Jiajun and Adelson, Edward H. and Du, Yilun},
   booktitle = {Robotics: Science and Systems (RSS)},
-  year      = {2026},
-  note      = {Under Review}
+  year      = {2026}
 }</code></pre>
   </div>
 </section>
