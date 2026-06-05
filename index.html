@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="CoStream combines LLMs, VLMs, and world models with tactile sensing for contact-rich robotic manipulation achieving 96.7% success rate and sub-millimeter precision.">
-  <meta name="keywords" content="CoStream, Multi-Modal Manipulation, Foundation Models, Tactile Sensing, Contact-Rich Assembly, RSS 2026">
+        content="CoStream composes simple, independent behaviors (semantic, predictive, and reactive) over a shared SE(3) interface for generalizable contact-rich manipulation, achieving sub-millimeter precision across 8 real-world tasks.">
+  <meta name="keywords" content="CoStream, Behavior Composition, SE(3) Control, Tactile Manipulation, Foundation Models, Contact-Rich Assembly, CoRL 2026">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CoStream: Compositional Multi-Stream Framework for Multi-Modal Manipulation</title>
+  <title>CoStream: Composing Simple Behaviors for Generalizable Complex Manipulation</title>
 
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -49,34 +49,24 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title"><span class="costream">CoStream</span>: Compositional Multi-Stream Framework for Multi-Modal Manipulation</h1>
+          <h1 class="title is-1 publication-title"><span class="costream">CoStream</span>: Composing Simple Behaviors for Generalizable Complex Manipulation</h1>
           <div class="venue-badge-container">
-            <span class="venue-badge">RSS 2026 &middot; Under Review</span>
+            <span class="venue-badge">CoRL 2026 &middot; Under Review</span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Haonan Chen<sup>1</sup>,</span>
-            <span class="author-block">Yuxiang Ma<sup>2</sup>,</span>
-            <span class="author-block">Stephen Tian<sup>3</sup>,</span>
-            <span class="author-block">Xiaoshen Han<sup>1</sup>,</span>
-            <span class="author-block">Wenlong Huang<sup>3</sup>,</span>
-            <span class="author-block">Yunzhu Li<sup>3</sup>,</span>
-            <span class="author-block">Jiajun Wu<sup>3</sup>,</span>
-            <span class="author-block">Edward H. Adelson<sup>2</sup>,</span>
-            <span class="author-block">Yilun Du<sup>1</sup></span>
+            <span class="author-block">Anonymous Author(s)</span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Harvard University,</span>
-            <span class="author-block"><sup>2</sup>Massachusetts Institute of Technology,</span>
-            <span class="author-block"><sup>3</sup>Stanford University</span>
+            <span class="author-block">Paper under double-blind review</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="./_RSS_2026__CoStream.pdf"
+                <a href="./_CoRL_2026__CoStream.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -159,16 +149,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Long-horizon contact-rich manipulation tasks demand that robots bridge the gap between slow, deliberate planning and high-frequency, reactive control. Classical pipelines struggle with the brittle modularity of hand-engineered components, whereas monolithic end-to-end policies lack the flexibility to recombine learned skills for new scenarios or compositional generalization.
+            Long-horizon, contact-rich complex manipulation tasks &mdash; such as seating a GPU into a PCIe slot &mdash; demand both millimeter precision and out-of-the-box generalization to new tasks. Classical pipelines use brittle, task-specific interfaces to achieve high-precision control but require costly redesigns to adapt to new tasks, whereas monolithic end-to-end policies provide better generalization but lack high precision on complex, out-of-distribution tasks unless retrained with new data. Both paradigms share an implicit assumption: once a manipulation capability is acquired, it must be deployed as a rigid pipeline or monolithic whole, rather than being freely decomposed and recomposed.
           </p>
           <p>
-            We propose <span class="costream">CoStream</span>, a multi-stream architecture that combines foundation models (LLMs, VLMs, world models) with complementary modalities (vision, language, force) to achieve compositional generalization. These streams function as autonomous, parallel processes that generate different forms of complementary, non-blocking information: the semantic stream applies abstract reasoning for task decomposition and constraint specification, the visual imagination stream utilizes world models to generate trajectories, and the reactive stream generates high-frequency compliant corrective behaviors during physical contact.
+            In this paper, we show that complex manipulation capabilities can emerge naturally from the composition of simple, independent behaviors. We propose <span class="costream">CoStream</span>, a framework orchestrating foundation models and diverse sensing modalities into multiple composable core behaviors: a <strong>semantic behavior</strong> extracting spatial constraints via foundation models; a <strong>predictive behavior</strong> forecasting trajectories by tracking keypoints in imagined videos; and a <strong>reactive behavior</strong> providing high-frequency tactile and force corrections.
           </p>
           <p>
-            Outputs are integrated into a final action through the multiplexing of object-centric transformations. This compositional design enables reuse of modules across different abstraction levels while maintaining closed-loop stability and asynchronous reactivity even when high-level semantic reasoning or visual imagination introduce large computational latency.
-          </p>
-          <p>
-            We validate <span class="costream">CoStream</span> on long-horizon contact-rich assembly tasks including RAM, CPU, and GPU motherboard component insertion and drill insertion. Our approach substantially outperforms prior methods, achieving a <strong>96.7% mean success rate</strong> with <strong>sub-millimeter (0.5 mm) precision</strong> and demonstrates robustness through recovery against external human perturbations during execution.
+            On a shared <em>SE(3)</em> interface, these outputs compose by right-multiplication into a single pose command at each control step, executed by a compliant controller. We demonstrate <span class="costream">CoStream</span> on <strong>8 real-world tasks</strong> spanning everyday manipulation and precision assembly, with the strongest gains in contact-rich assembly and object transfer, and show robust recovery from manual perturbations during execution.
           </p>
         </div>
       </div>
@@ -181,13 +168,13 @@
         <h2 class="title is-3">Method Overview</h2>
         <div class="content has-text-justified">
           <p>
-            <span class="costream">CoStream</span> decomposes manipulation into three parallel streams: <strong>Semantic</strong> (LLMs/VLMs for task decomposition), <strong>Visual</strong> (world models for trajectory generation), and <strong>Reactive</strong> (tactile/force feedback for compliant control). Streams synchronize through object-centric transformation composition.
+            <span class="costream">CoStream</span> decomposes manipulation into three parallel behaviors: <strong>Semantic</strong> (LLMs/VLMs extract object-centric spatial constraints), <strong>Predictive</strong> (a video world model forecasts a nominal trajectory via keypoint tracking), and <strong>Reactive</strong> (tactile/force feedback for high-frequency compliant corrections). On a shared <em>SE(3)</em> interface, the behaviors compose by right-multiplication into a single pose command at every control step.
           </p>
         </div>
         <div class="content has-text-centered" style="margin-top: 2em;">
           <img src="./static/images/method.png" alt="CoStream Architecture" style="width: 100%; max-width: 1200px; border-radius: 10px;">
           <p style="margin-top: 1em; font-size: 0.95em; color: #666;">
-            <strong>Figure 2: CoStream Architecture.</strong> Three parallel computational streams operate at different timescales: Semantic Modeling and Planning (LLM/VLM) decomposes tasks and specifies constraints, Visual Trajectory Generation uses world models to imagine execution videos, and Reactive Modeling and Planning provides high-frequency tactile corrections. The final control action is a unified composition of object-centric transformations from all streams.
+            <strong>Figure 2: CoStream Architecture.</strong> A scene parser converts language goals and observations into a Scene Summary, which a contact-aware policy compiler expands into typed stages. Within each stage, three behaviors run in parallel at their natural rates: the Semantic behavior produces a task-frame anchor, the Predictive behavior generates a nominal motion prior from imagined video, and the Reactive behavior emits a tactile residual. An action composer fuses them by right-multiplication into one pose command per control step, executed by a compliant controller.
           </p>
         </div>
       </div>
@@ -197,26 +184,26 @@
     <!-- World Model Visualization. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3 section-accent">Visual Trajectory Generation</h2>
+        <h2 class="title is-3 section-accent">Predictive Behavior</h2>
         <div class="content has-text-justified">
           <p>
-            The visual stream uses world models to "imagine" future execution trajectories. These generated videos provide high-fidelity motion priors for smooth, object-centric manipulation.
+            The predictive behavior uses a video world model to "imagine" candidate execution trajectories conditioned on the current image and step instruction. A VLM critic selects the rollout that best satisfies the semantic and safety constraints, and a 3D keypoint tracker lifts it into an object-centric nominal motion prior.
           </p>
         </div>
         <div class="columns">
           <div class="column">
-            <h3 class="title is-4">Successful Trajectory</h3>
+            <h3 class="title is-4">Selected Trajectory</h3>
             <video autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/world_model/gpu_insertion_success.mp4" type="video/mp4">
             </video>
-            <p class="video-caption">World model generates a valid trajectory for GPU insertion</p>
+            <p class="video-caption">The video world model generates a valid trajectory for GPU insertion</p>
           </div>
           <div class="column">
             <h3 class="title is-4">Rejected Trajectory</h3>
             <video autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/world_model/gpu_insertion_fail1.mp4" type="video/mp4">
             </video>
-            <p class="video-caption">VLM filters out physically implausible trajectories</p>
+            <p class="video-caption">The VLM critic filters out physically implausible rollouts</p>
           </div>
         </div>
       </div>
@@ -236,8 +223,9 @@
         <div class="content">
           <h2 class="title is-3">Task Performance</h2>
           <p>
-            <span class="costream">CoStream</span> achieves high success rates across all contact-rich manipulation tasks:
+            We evaluate <span class="costream">CoStream</span> on <strong>8 real-world tasks</strong> (15 trials each) across two groups: high-precision <strong>contact-rich assembly</strong> and <strong>everyday manipulation</strong>. The same set of behaviors transfers across all tasks without per-task retraining.
           </p>
+          <h3 class="title is-4">Contact-Rich Assembly</h3>
           <table class="results-table">
             <thead>
               <tr>
@@ -259,7 +247,7 @@
                 <td>0.0%</td>
               </tr>
               <tr>
-                <td>π<sub>0.5</sub></td>
+                <td>&pi;<sub>0.5</sub></td>
                 <td>0/15</td>
                 <td>0/15</td>
                 <td>0/15</td>
@@ -280,9 +268,44 @@
             Sub-millimeter precision: <strong>0.5mm clearance</strong> for drill insertion
           </p>
 
+          <h3 class="title is-4" style="margin-top: 2em;">Everyday Manipulation</h3>
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Lamp</th>
+                <th>Whiteboard</th>
+                <th>Cup&nbsp;&rarr;&nbsp;Plate</th>
+                <th>Clothes&nbsp;&rarr;&nbsp;Box</th>
+                <th><strong>Mean</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&pi;<sub>0.5</sub></td>
+                <td>0/15</td>
+                <td>0/15</td>
+                <td>4/15</td>
+                <td>3/15</td>
+                <td>11.7%</td>
+              </tr>
+              <tr class="row-highlight">
+                <td><strong>CoStream (Ours)</strong></td>
+                <td><strong>5/15</strong></td>
+                <td><strong>8/15</strong></td>
+                <td><strong>13/15</strong></td>
+                <td><strong>14/15</strong></td>
+                <td><strong>66.7%</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 1em; font-size: 0.95em; color: #666;">
+            Beyond precision assembly, <span class="costream">CoStream</span> improves over the monolithic VLA baseline across everyday tasks, with the largest gains on object transfer (Cup&nbsp;&rarr;&nbsp;Plate, Clothes&nbsp;&rarr;&nbsp;Box).
+          </p>
+
           <h3 class="title is-4" style="margin-top: 2em;">Ablation Study</h3>
           <p>
-            The reactive stream is essential for sub-millimeter precision. Ablation on drill insertion task:
+            The reactive behavior is essential for sub-millimeter precision. Ablation on the drill insertion task:
           </p>
           <table class="results-table">
             <thead>
@@ -297,13 +320,13 @@
                 <td><strong>15/15 (100%)</strong></td>
               </tr>
               <tr>
-                <td>CoStream w/o Reactive Layer</td>
+                <td>CoStream w/o Reactive Behavior</td>
                 <td>3/15 (20%)</td>
               </tr>
             </tbody>
           </table>
           <p style="margin-top: 1em; font-size: 0.95em; color: #666;">
-            Removing the reactive layer causes success rate to drop from 100% to 20%, demonstrating that tactile force sensing is critical for handling sub-millimeter clearances.
+            Removing the reactive behavior causes success rate to drop from 100% to 20%, demonstrating that tactile force feedback is critical for handling sub-millimeter clearances.
           </p>
         </div>
       </div>
@@ -318,7 +341,7 @@
 
         <div class="content has-text-justified">
           <p>
-            <span class="costream">CoStream</span>'s reactive stream provides real-time corrections maintaining task objectives defined by semantic and visual streams, even when faced with external perturbations during execution.
+            <span class="costream">CoStream</span>'s reactive behavior provides real-time corrections that maintain the task objectives defined by the semantic and predictive behaviors, even when faced with external perturbations during execution.
           </p>
         </div>
 
@@ -367,14 +390,14 @@
             <video autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/failure cases/gpu_perturb_failure_4x.mp4" type="video/mp4">
             </video>
-            <p class="video-caption">A large-magnitude perturbation displaces the GPU beyond the reactive stream's recovery range, resulting in a failed insertion attempt.</p>
+            <p class="video-caption">A large-magnitude perturbation displaces the GPU beyond the reactive behavior's recovery range, resulting in a failed insertion attempt.</p>
           </div>
           <div class="column">
             <h3 class="title is-4">RAM LLM Stage Failure</h3>
             <video autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/failure cases/ram_llm_stages_failure.mp4" type="video/mp4">
             </video>
-            <p class="video-caption">An incorrect stage transition predicted by the LLM semantic stream causes the robot to proceed prematurely, resulting in a misaligned RAM insertion.</p>
+            <p class="video-caption">An incorrect stage transition predicted by the LLM semantic behavior causes the robot to proceed prematurely, resulting in a misaligned RAM insertion.</p>
           </div>
         </div>
 
@@ -423,7 +446,7 @@
             <strong>Contact-Rich Manipulation:</strong> Tactile sensing and force control have been explored for precision manipulation tasks, with methods leveraging GelSight sensors and compliant control strategies.
           </p>
           <p>
-            <strong>Compositional Approaches:</strong> Task and Motion Planning (TAMP) and modular policy architectures provide structured approaches to decompose complex manipulation tasks, though they often require extensive manual engineering.
+            <strong>Compositional Modeling:</strong> Inspired by behavior-based robotics, where complex behavior emerges from composing simple sensory behaviors, <span class="costream">CoStream</span> composes semantic, predictive, and reactive behaviors in parallel over a shared SE(3) interface &mdash; avoiding both the hand-specified interfaces of Task and Motion Planning (TAMP) and the retraining requirements of monolithic end-to-end policies such as <span style="white-space: nowrap;">&pi;<sub>0.5</sub></span>.
           </p>
           <p>
             <strong>World Models for Robotics:</strong> Video generation models have recently been applied to robot planning, enabling visual imagination of future trajectories for motion planning and control.
@@ -441,9 +464,9 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@inproceedings{costream2026,
-  title     = {CoStream: Compositional Multi-Stream Framework for Multi-Modal Manipulation},
-  author    = {Chen, Haonan and Ma, Yuxiang and Tian, Stephen and Han, Xiaoshen and Huang, Wenlong and Li, Yunzhu and Wu, Jiajun and Adelson, Edward H. and Du, Yilun},
-  booktitle = {Robotics: Science and Systems (RSS)},
+  title     = {CoStream: Composing Simple Behaviors for Generalizable Complex Manipulation},
+  author    = {Anonymous Author(s)},
+  booktitle = {Conference on Robot Learning (CoRL)},
   year      = {2026}
 }</code></pre>
   </div>
@@ -454,7 +477,7 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./_RSS_2026__CoStream.pdf">
+         href="./_CoRL_2026__CoStream.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
     </div>
@@ -472,3 +495,4 @@
 
 </body>
 </html>
+
