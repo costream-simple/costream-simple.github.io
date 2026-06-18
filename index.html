@@ -43,7 +43,7 @@
       <a href="#assembly">Assembly</a>
       <a href="#everyday">Everyday</a>
       <a href="#perturbation">Robustness</a>
-      <a href="#method">Method</a>
+      <a href="#method">Predictive</a>
       <a href="#BibTeX">BibTeX</a>
     </div>
     <a class="nav-cta" href="./CoStream_arxiv.pdf">
@@ -311,30 +311,6 @@
 
     </div>
 
-    <!-- Drill Insertion. -->
-    <div class="columns is-centered" id="drill-section">
-      <div class="column is-full-width">
-        <h2 class="title is-3 section-accent">Sub-Millimeter Drill Insertion</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            Our headline precision result: inserting a drill bit into a <strong>0.5&nbsp;mm clearance</strong> hole. <span class="costream">CoStream</span> succeeds on <strong>15/15</strong> trials by compliant adaptation, while VoxPoser and <span style="white-space: nowrap;">&pi;<sub>0.5</sub></span> complete <strong>none</strong>. Removing the reactive behavior collapses success to 3/15 &mdash; tactile force feedback is what makes this clearance reachable.
-          </p>
-        </div>
-
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <video autoplay controls muted loop playsinline height="100%" style="border-radius: 10px;">
-              <source src="./static/videos/drill/drill_insertion_4x.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption"><strong>0.5&nbsp;mm clearance, closed-loop.</strong> The bit stays centered through compliant adaptation while open-loop baselines jam (4&times; speed).</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <!--/ Drill Insertion. -->
-
     <!-- Long-Horizon Assembly. -->
     <div class="columns is-centered" id="assembly">
       <div class="column is-full-width">
@@ -451,13 +427,6 @@
             <video autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/perturbs/ram_perturb_1.mp4" type="video/mp4">
             </video>
-          </div>
-        </div>
-
-        <div class="columns is-centered" style="margin-top: 1.5em;">
-          <div class="column is-full-width">
-            <img src="./static/images/tactile_vis.png" alt="Tactile feedback driving real-time pose realignment" style="width: 100%; border-radius: 10px;">
-            <p class="video-caption"><strong>What the reactive behavior senses.</strong> Left: snapshots of recovery from manual displacement during RAM, CPU, and GPU insertion. Right: raw tactile readings and the derived real-time pose estimate used to realign &mdash; the signal behind the recoveries above.</p>
           </div>
         </div>
 
