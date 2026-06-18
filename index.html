@@ -11,6 +11,10 @@
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
@@ -26,47 +30,68 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="./static/js/charts.js"></script>
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+<nav class="site-nav" role="navigation" aria-label="main navigation">
+  <a class="site-mark" href="#top"><span class="mark-accent">Co</span>Stream</a>
+  <div class="nav-right">
+    <div class="nav-sections">
+      <a href="#why">Why</a>
+      <a href="#results">Results</a>
+      <a href="#assembly">Assembly</a>
+      <a href="#everyday">Everyday</a>
+      <a href="#perturbation">Robustness</a>
+      <a href="#method">Method</a>
+      <a href="#BibTeX">BibTeX</a>
     </div>
+    <a class="nav-cta" href="./CoStream_arxiv.pdf">
+      <i class="fas fa-file-pdf"></i>&nbsp;Paper
+    </a>
   </div>
 </nav>
 
 
-<section class="hero">
+<section class="hero" id="top">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title"><span class="costream">CoStream</span>: Composing Simple Behaviors for Generalizable Complex Manipulation</h1>
-          <div class="venue-badge-container">
-            <span class="venue-badge">CoRL 2026 &middot; Under Review</span>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://haonan16.github.io/">Haonan Chen</a><sup>*1,2</sup>,</span>
+            <span class="author-block"><a href="https://yuxiang-ma.github.io/">Yuxiang Ma</a><sup>*3</sup>,</span>
+            <span class="author-block"><a href="https://s-tian.github.io/">Stephen Tian</a><sup>2</sup>,</span>
+            <span class="author-block">Xiaoshen Han<sup>1</sup>,</span>
+            <span class="author-block"><a href="https://wenlong.page/">Wenlong Huang</a><sup>2</sup>,</span>
+            <span class="author-block">Feiyang Wu<sup>1</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Anonymous Author(s)</span>
+            <span class="author-block"><a href="https://yunzhuli.github.io/">Yunzhu Li</a><sup>4</sup>,</span>
+            <span class="author-block"><a href="https://jiajunwu.com/">Jiajun Wu</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://persci.mit.edu/people/adelson/">Edward H.&nbsp;Adelson</a><sup>3</sup>,</span>
+            <span class="author-block"><a href="https://yilundu.github.io/">Yilun Du</a><sup>1</sup></span>
           </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Paper under double-blind review</span>
+          <div class="affiliation-logos">
+            <span class="logo-item"><sup class="logo-sup">1</sup><img src="./static/images/logos/harvard.svg" alt="Harvard University"></span>
+            <span class="logo-item"><sup class="logo-sup">2</sup><img src="./static/images/logos/stanford.svg" alt="Stanford University"></span>
+            <span class="logo-item"><sup class="logo-sup">3</sup><img src="./static/images/logos/mit.svg" alt="Massachusetts Institute of Technology"></span>
+            <span class="logo-item"><sup class="logo-sup">4</sup><img src="./static/images/logos/columbia.svg" alt="Columbia University"></span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal contribution.</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="./_CoRL_2026__CoStream.pdf"
+                <a href="./CoStream_arxiv.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -95,8 +120,11 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/perturbs/cpu_perturb_2_4x.mp4"
+      <p class="has-text-centered" style="font-size: 0.95em; color: #666; margin-bottom: 0.5em;">
+        <i class="fas fa-volume-up"></i>&nbsp;This video includes narration &mdash; unmute for audio explanation.
+      </p>
+      <video id="teaser" autoplay muted loop playsinline controls height="100%">
+        <source src="./static/videos/teaser_web.mp4"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
@@ -135,6 +163,24 @@
                     type="video/mp4">
           </video>
         </div>
+        <div class="item item-lamp">
+          <video poster="" id="lamp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/everyday/lamp_ours.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mug">
+          <video poster="" id="mug" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/everyday/mug_ours.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-cloth">
+          <video poster="" id="cloth" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/everyday/cloth_ours.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
   </div>
@@ -149,66 +195,68 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Long-horizon, contact-rich complex manipulation tasks &mdash; such as seating a GPU into a PCIe slot &mdash; demand both millimeter precision and out-of-the-box generalization to new tasks. Classical pipelines use brittle, task-specific interfaces to achieve high-precision control but require costly redesigns to adapt to new tasks, whereas monolithic end-to-end policies provide better generalization but lack high precision on complex, out-of-distribution tasks unless retrained with new data. Both paradigms share an implicit assumption: once a manipulation capability is acquired, it must be deployed as a rigid pipeline or monolithic whole, rather than being freely decomposed and recomposed.
+            Long-horizon, contact-rich manipulation &mdash; such as seating a GPU into a PCIe slot &mdash; demands both millimeter precision and generalization to new tasks. Classical pipelines achieve precise control through brittle, task-specific interfaces that need costly redesigns, while monolithic policies generalize better but lose precision on out-of-distribution tasks unless retrained. Both assume a capability, once acquired, must ship as a rigid whole rather than being freely decomposed and recomposed.
           </p>
           <p>
-            In this paper, we show that complex manipulation capabilities can emerge naturally from the composition of simple, independent behaviors. We propose <span class="costream">CoStream</span>, a framework orchestrating foundation models and diverse sensing modalities into multiple composable core behaviors: a <strong>semantic behavior</strong> extracting spatial constraints via foundation models; a <strong>predictive behavior</strong> forecasting trajectories by tracking keypoints in imagined videos; and a <strong>reactive behavior</strong> providing high-frequency tactile and force corrections.
+            We show that complex manipulation can emerge from composing simple, independent behaviors. <span class="costream">CoStream</span> orchestrates foundation models and diverse sensors into composable core behaviors: a <strong>semantic behavior</strong> extracting spatial constraints, a <strong>predictive behavior</strong> forecasting trajectories from imagined videos, and a <strong>reactive behavior</strong> providing high-frequency tactile corrections. On a shared <em>SE(3)</em> interface, these compose by right-multiplication into one pose command per control step.
           </p>
           <p>
-            On a shared <em>SE(3)</em> interface, these outputs compose by right-multiplication into a single pose command at each control step, executed by a compliant controller. We demonstrate <span class="costream">CoStream</span> on <strong>8 real-world tasks</strong> spanning everyday manipulation and precision assembly, with the strongest gains in contact-rich assembly and object transfer, and show robust recovery from manual perturbations during execution.
+            We demonstrate <span class="costream">CoStream</span> on <strong>8 real-world tasks</strong> spanning everyday manipulation and precision assembly &mdash; with the strongest gains in contact-rich assembly and object transfer &mdash; and show robust recovery from manual perturbations during execution.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Method Overview. -->
+    <!-- Teaser Figure. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Method Overview</h2>
-        <div class="content has-text-justified">
-          <p>
-            <span class="costream">CoStream</span> decomposes manipulation into three parallel behaviors: <strong>Semantic</strong> (LLMs/VLMs extract object-centric spatial constraints), <strong>Predictive</strong> (a video world model forecasts a nominal trajectory via keypoint tracking), and <strong>Reactive</strong> (tactile/force feedback for high-frequency compliant corrections). On a shared <em>SE(3)</em> interface, the behaviors compose by right-multiplication into a single pose command at every control step.
-          </p>
-        </div>
-        <div class="content has-text-centered" style="margin-top: 2em;">
-          <img src="./static/images/method.png" alt="CoStream Architecture" style="width: 100%; max-width: 1200px; border-radius: 10px;">
+        <div class="content has-text-centered">
+          <img src="./static/images/teaser.png" alt="CoStream: Composing Simple Behaviors for Complex Contact-Rich Manipulation" style="width: 100%; max-width: 1200px; border-radius: 10px;">
           <p style="margin-top: 1em; font-size: 0.95em; color: #666;">
-            <strong>Figure 2: CoStream Architecture.</strong> A scene parser converts language goals and observations into a Scene Summary, which a contact-aware policy compiler expands into typed stages. Within each stage, three behaviors run in parallel at their natural rates: the Semantic behavior produces a task-frame anchor, the Predictive behavior generates a nominal motion prior from imagined video, and the Reactive behavior emits a tactile residual. An action composer fuses them by right-multiplication into one pose command per control step, executed by a compliant controller.
+            <strong><span class="costream">CoStream</span>: Composing Simple Behaviors for Complex Contact-Rich Manipulation.</strong> <span class="costream">CoStream</span> composes multiple sensor-grounded behaviors into a single end-effector command. A semantic behavior parses instructions with an LLM and a VLM into geometric constraints. A predictive behavior extracts a 3D reference trajectory from a video world model. A reactive behavior closes a high-rate loop from tactile and force feedback. The behaviors share an <em>SE(3)</em> interface and compose by right-multiplication into one pose command at every control step, which a compliant controller executes while regulating contact force.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Method Overview. -->
+    <!--/ Teaser Figure. -->
 
-    <!-- World Model Visualization. -->
-    <div class="columns is-centered has-text-centered">
+    <!-- Why CoStream. -->
+    <div class="columns is-centered has-text-centered" id="why">
       <div class="column is-full-width">
-        <h2 class="title is-3 section-accent">Predictive Behavior</h2>
-        <div class="content has-text-justified">
-          <p>
-            The predictive behavior uses a video world model to "imagine" candidate execution trajectories conditioned on the current image and step instruction. A VLM critic selects the rollout that best satisfies the semantic and safety constraints, and a 3D keypoint tracker lifts it into an object-centric nominal motion prior.
-          </p>
+        <h2 class="title is-3">Why <span class="costream">CoStream</span>?</h2>
+        <p style="margin-bottom: 0.5em; color: #555;">
+          The same set of behaviors solves <strong>8 contact-rich tasks</strong> &mdash; from sub-millimeter assembly to everyday manipulation &mdash; with <strong>no per-task demonstrations, retraining, or pipeline redesign</strong>.
+        </p>
+      </div>
+    </div>
+    <div class="columns why-band">
+      <div class="column">
+        <div class="why-card">
+          <h3>Classical Pipelines</h3>
+          <span class="why-row"><span class="why-axis">New task</span><span class="why-val"><span class="why-cross">&times;</span>Re-engineer perception &amp; planning modules</span></span>
+          <span class="why-row"><span class="why-axis">Contact precision</span><span class="why-val"><span class="why-cross">&times;</span>Brittle, open-loop interfaces</span></span>
+          <span class="why-row"><span class="why-axis">Add a sensor</span><span class="why-val"><span class="why-cross">&times;</span>Rewrite hand-specified interfaces</span></span>
         </div>
-        <div class="columns">
-          <div class="column">
-            <h3 class="title is-4">Selected Trajectory</h3>
-            <video autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/world_model/gpu_insertion_success.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">The video world model generates a valid trajectory for GPU insertion</p>
-          </div>
-          <div class="column">
-            <h3 class="title is-4">Rejected Trajectory</h3>
-            <video autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/world_model/gpu_insertion_fail1.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">The VLM critic filters out physically implausible rollouts</p>
-          </div>
+      </div>
+      <div class="column">
+        <div class="why-card">
+          <h3>Monolithic VLAs</h3>
+          <span class="why-row"><span class="why-axis">New task</span><span class="why-val"><span class="why-cross">&times;</span>Collect fresh demos &amp; retrain</span></span>
+          <span class="why-row"><span class="why-axis">Contact precision</span><span class="why-val"><span class="why-cross">&times;</span>Destabilizes on contact</span></span>
+          <span class="why-row"><span class="why-axis">Add a sensor</span><span class="why-val"><span class="why-cross">&times;</span>Retrain the whole network</span></span>
+        </div>
+      </div>
+      <div class="column">
+        <div class="why-card is-ours">
+          <h3><span class="costream">CoStream</span> (Ours)</h3>
+          <span class="why-row"><span class="why-axis">New task</span><span class="why-val"><span class="why-check">&checkmark;</span>Drop-in &mdash; no retraining</span></span>
+          <span class="why-row"><span class="why-axis">Contact precision</span><span class="why-val"><span class="why-check">&checkmark;</span>Sub-mm via 25&nbsp;Hz reactive behavior</span></span>
+          <span class="why-row"><span class="why-axis">Add a sensor</span><span class="why-val"><span class="why-check">&checkmark;</span>Add one behavior; <em>SE(3)</em> composes it</span></span>
         </div>
       </div>
     </div>
-    <!--/ World Model Visualization. -->
+    <!--/ Why CoStream. -->
   </div>
 </section>
 
@@ -216,132 +264,169 @@
 <section class="section">
   <div class="container is-max-desktop">
 
-    <div class="columns is-centered">
+    <div class="columns is-centered" id="results">
 
       <!-- Quantitative Results. -->
-      <div class="column">
-        <div class="content">
+      <div class="column is-full-width">
+        <div class="content has-text-centered">
           <h2 class="title is-3">Task Performance</h2>
           <p>
-            We evaluate <span class="costream">CoStream</span> on <strong>8 real-world tasks</strong> (15 trials each) across two groups: high-precision <strong>contact-rich assembly</strong> and <strong>everyday manipulation</strong>. The same set of behaviors transfers across all tasks without per-task retraining.
+            We evaluate <span class="costream">CoStream</span> on <strong>8 real-world tasks</strong> (15 trials each) across two groups: high-precision <strong>contact-rich assembly</strong> and <strong>everyday manipulation</strong>.
           </p>
-          <h3 class="title is-4">Contact-Rich Assembly</h3>
-          <table class="results-table">
-            <thead>
-              <tr>
-                <th>Method</th>
-                <th>Drill</th>
-                <th>RAM</th>
-                <th>CPU</th>
-                <th>GPU</th>
-                <th><strong>Mean</strong></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>VoxPoser</td>
-                <td>0/15</td>
-                <td>0/15</td>
-                <td>0/15</td>
-                <td>0/15</td>
-                <td>0.0%</td>
-              </tr>
-              <tr>
-                <td>&pi;<sub>0.5</sub></td>
-                <td>0/15</td>
-                <td>0/15</td>
-                <td>0/15</td>
-                <td>0/15</td>
-                <td>0.0%</td>
-              </tr>
-              <tr class="row-highlight">
-                <td><strong>CoStream (Ours)</strong></td>
-                <td><strong>15/15</strong></td>
-                <td><strong>14/15</strong></td>
-                <td><strong>14/15</strong></td>
-                <td><strong>15/15</strong></td>
-                <td><strong>96.7%</strong></td>
-              </tr>
-            </tbody>
-          </table>
-          <p style="margin-top: 1em;">
-            Sub-millimeter precision: <strong>0.5mm clearance</strong> for drill insertion
-          </p>
+          <p class="claim-line">One set of behaviors. Eight tasks. No per-task training.</p>
+        </div>
 
-          <h3 class="title is-4" style="margin-top: 2em;">Everyday Manipulation</h3>
-          <table class="results-table">
-            <thead>
-              <tr>
-                <th>Method</th>
-                <th>Lamp</th>
-                <th>Whiteboard</th>
-                <th>Cup&nbsp;&rarr;&nbsp;Plate</th>
-                <th>Clothes&nbsp;&rarr;&nbsp;Box</th>
-                <th><strong>Mean</strong></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>&pi;<sub>0.5</sub></td>
-                <td>0/15</td>
-                <td>0/15</td>
-                <td>4/15</td>
-                <td>3/15</td>
-                <td>11.7%</td>
-              </tr>
-              <tr class="row-highlight">
-                <td><strong>CoStream (Ours)</strong></td>
-                <td><strong>5/15</strong></td>
-                <td><strong>8/15</strong></td>
-                <td><strong>13/15</strong></td>
-                <td><strong>14/15</strong></td>
-                <td><strong>66.7%</strong></td>
-              </tr>
-            </tbody>
-          </table>
-          <p style="margin-top: 1em; font-size: 0.95em; color: #666;">
-            Beyond precision assembly, <span class="costream">CoStream</span> improves over the monolithic VLA baseline across everyday tasks, with the largest gains on object transfer (Cup&nbsp;&rarr;&nbsp;Plate, Clothes&nbsp;&rarr;&nbsp;Box).
-          </p>
+        <!-- Two main charts side-by-side -->
+        <div class="columns">
+          <div class="column">
+            <h3 class="title is-4 has-text-centered">Contact-Rich Assembly</h3>
+            <div class="bar-chart" data-chart="assembly"></div>
+            <p class="video-caption">
+              <span class="costream">CoStream</span> reaches a 96.7% mean success rate, while VoxPoser and <span style="white-space: nowrap;">&pi;<sub>0.5</sub></span> complete none (0.0%). Drill insertion: 0.5&nbsp;mm clearance. Hover a bar for raw trials.
+            </p>
+          </div>
+          <div class="column">
+            <h3 class="title is-4 has-text-centered">Everyday Manipulation</h3>
+            <div class="bar-chart" data-chart="everyday"></div>
+            <p class="video-caption">
+              <span class="costream">CoStream</span> (66.7% mean) improves over <span style="white-space: nowrap;">&pi;<sub>0.5</sub></span> (11.7% mean) across everyday tasks, with the largest gains on object transfer.
+            </p>
+          </div>
+        </div>
 
-          <h3 class="title is-4" style="margin-top: 2em;">Ablation Study</h3>
-          <p>
-            The reactive behavior is essential for sub-millimeter precision. Ablation on the drill insertion task:
-          </p>
-          <table class="results-table">
-            <thead>
-              <tr>
-                <th>Method</th>
-                <th>Success Rate</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="row-highlight">
-                <td><strong>CoStream (Full Framework)</strong></td>
-                <td><strong>15/15 (100%)</strong></td>
-              </tr>
-              <tr>
-                <td>CoStream w/o Reactive Behavior</td>
-                <td>3/15 (20%)</td>
-              </tr>
-            </tbody>
-          </table>
-          <p style="margin-top: 1em; font-size: 0.95em; color: #666;">
-            Removing the reactive behavior causes success rate to drop from 100% to 20%, demonstrating that tactile force feedback is critical for handling sub-millimeter clearances.
-          </p>
+        <!-- Ablation: compact row, chart + text side-by-side -->
+        <div class="columns is-vcentered" style="margin-top: 0.5em;">
+          <div class="column is-one-third">
+            <h3 class="title is-4 has-text-centered">Ablation: Reactive Behavior</h3>
+            <div class="bar-chart" data-chart="ablation"></div>
+          </div>
+          <div class="column">
+            <p style="font-size: 0.95em; color: #555;">
+              The reactive behavior is essential for sub-millimeter precision. On drill insertion, removing it drops success from <strong>100%</strong> to <strong>20%</strong> &mdash; tactile force feedback is critical for handling sub-millimeter clearances.
+            </p>
+          </div>
         </div>
       </div>
       <!--/ Quantitative Results. -->
 
     </div>
 
+    <!-- Drill Insertion. -->
+    <div class="columns is-centered" id="drill-section">
+      <div class="column is-full-width">
+        <h2 class="title is-3 section-accent">Sub-Millimeter Drill Insertion</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Our headline precision result: inserting a drill bit into a <strong>0.5&nbsp;mm clearance</strong> hole. <span class="costream">CoStream</span> succeeds on <strong>15/15</strong> trials by compliant adaptation, while VoxPoser and <span style="white-space: nowrap;">&pi;<sub>0.5</sub></span> complete <strong>none</strong>. Removing the reactive behavior collapses success to 3/15 &mdash; tactile force feedback is what makes this clearance reachable.
+          </p>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <video autoplay controls muted loop playsinline height="100%" style="border-radius: 10px;">
+              <source src="./static/videos/drill/drill_insertion_4x.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption"><strong>0.5&nbsp;mm clearance, closed-loop.</strong> The bit stays centered through compliant adaptation while open-loop baselines jam (4&times; speed).</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Drill Insertion. -->
+
+    <!-- Long-Horizon Assembly. -->
+    <div class="columns is-centered" id="assembly">
+      <div class="column is-full-width">
+        <h2 class="title is-3 section-accent">Long-Horizon Motherboard Assembly</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            <span class="costream">CoStream</span> completes the full motherboard assembly sequence &mdash; transitioning seamlessly between CPU, GPU, and RAM insertion &mdash; demonstrating compositional generalization across contact-rich subtasks without task-specific retraining.
+          </p>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <video autoplay controls muted loop playsinline height="100%" style="border-radius: 10px;">
+              <source src="./static/videos/mb/mb_assembly_frontview_4x.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption"><strong>Same behaviors, zero retraining between subtasks.</strong> Full motherboard assembly &mdash; CPU, GPU, and RAM installation in sequence (4&times; speed).</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Long-Horizon Assembly. -->
+
+    <!-- Everyday Manipulation. -->
+    <div class="columns is-centered" id="everyday">
+      <div class="column is-full-width">
+        <h2 class="title is-3 section-accent">Everyday Manipulation</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            <span class="costream">CoStream</span> transfers to everyday manipulation without per-task retraining. We compare <span class="costream">CoStream</span> (left) against the monolithic VLA baseline <span style="white-space: nowrap;">&pi;<sub>0.5</sub></span> (right) on the same tasks.
+          </p>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <h3 class="title is-4">Cup &rarr; Plate &mdash; <span class="costream">CoStream</span> (Ours)</h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/everyday/mug_ours.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column">
+            <h3 class="title is-4">Cup &rarr; Plate &mdash; <span style="white-space: nowrap;">&pi;<sub>0.5</sub></span></h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/everyday/mug_pi.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <h3 class="title is-4">Clothes &rarr; Box &mdash; <span class="costream">CoStream</span> (Ours)</h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/everyday/cloth_ours.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column">
+            <h3 class="title is-4">Clothes &rarr; Box &mdash; <span style="white-space: nowrap;">&pi;<sub>0.5</sub></span></h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/everyday/cloth_pi.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <h3 class="title is-4">Turn on the Lamp &mdash; <span class="costream">CoStream</span> (Ours)</h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/everyday/lamp_ours.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column">
+            <h3 class="title is-4">Turn on the Lamp &mdash; <span style="white-space: nowrap;">&pi;<sub>0.5</sub></span></h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/everyday/lamp_pi.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Everyday Manipulation. -->
+
     <!-- Perturbation Analysis. -->
-    <div class="columns is-centered">
+    <div class="columns is-centered" id="perturbation">
       <div class="column is-full-width">
         <h2 class="title is-3 section-accent">Robustness to Human Perturbations</h2>
 
         <div class="content has-text-justified">
           <p>
-            <span class="costream">CoStream</span>'s reactive behavior provides real-time corrections that maintain the task objectives defined by the semantic and predictive behaviors, even when faced with external perturbations during execution.
+            <span class="costream">CoStream</span>'s reactive behavior provides real-time corrections that preserve the objectives set by the semantic and predictive behaviors, even under external perturbations during execution.
           </p>
         </div>
 
@@ -369,9 +454,48 @@
           </div>
         </div>
 
+        <div class="columns is-centered" style="margin-top: 1.5em;">
+          <div class="column is-full-width">
+            <img src="./static/images/tactile_vis.png" alt="Tactile feedback driving real-time pose realignment" style="width: 100%; border-radius: 10px;">
+            <p class="video-caption"><strong>What the reactive behavior senses.</strong> Left: snapshots of recovery from manual displacement during RAM, CPU, and GPU insertion. Right: raw tactile readings and the derived real-time pose estimate used to realign &mdash; the signal behind the recoveries above.</p>
+          </div>
+        </div>
+
       </div>
     </div>
     <!--/ Perturbation Analysis. -->
+
+    <!-- World Model Visualization. -->
+    <div class="columns is-centered has-text-centered" id="method">
+      <div class="column is-full-width">
+        <h2 class="title is-3 section-accent">Predictive Behavior</h2>
+        <div class="content has-text-justified">
+          <p>
+            The predictive behavior uses a video world model to "imagine" candidate trajectories from the current image and step instruction. A VLM critic selects the rollout that best satisfies the semantic and safety constraints, and a 3D keypoint tracker lifts it into an object-centric motion prior.
+          </p>
+          <p>
+            Crucially, this is <em>just one behavior</em>. Every behavior &mdash; foundation model, learned network, or classical control &mdash; is simply a function <code>f(observation)&nbsp;&rarr;&nbsp;SE(3)</code>. Because they share this interface, extending <span class="costream">CoStream</span> means adding one behavior, not redesigning a pipeline or retraining a policy.
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <h3 class="title is-4">Selected Trajectory</h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/world_model/gpu_insertion_success.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">The video world model generates a valid trajectory for GPU insertion</p>
+          </div>
+          <div class="column">
+            <h3 class="title is-4">Rejected Trajectory</h3>
+            <video autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/world_model/gpu_insertion_fail1.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">The VLM critic filters out physically implausible rollouts</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ World Model Visualization. -->
 
     <!-- Failure Cases. -->
     <div class="columns is-centered">
@@ -380,7 +504,7 @@
 
         <div class="content has-text-justified">
           <p>
-            While <span class="costream">CoStream</span> achieves a 96.7% mean success rate, we analyze the remaining failure cases to understand current limitations. Failures arise from two main sources: task-level perturbations that exceed the reactive stream's correction capacity, and semantic reasoning errors during multi-stage planning.
+            Despite a 96.7% mean success rate, failures remain, from two main sources: perturbations that exceed the reactive stream's correction capacity, and semantic reasoning errors during multi-stage planning.
           </p>
         </div>
 
@@ -405,56 +529,6 @@
     </div>
     <!--/ Failure Cases. -->
 
-    <!-- Long-Horizon Assembly. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3 section-accent">Long-Horizon Motherboard Assembly</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            <span class="costream">CoStream</span> successfully completes the full motherboard assembly sequence, transitioning seamlessly between CPU, GPU, and RAM insertion tasks. This demonstrates compositional generalization across multiple contact-rich manipulation subtasks without task-specific retraining.
-          </p>
-        </div>
-
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <video autoplay controls muted loop playsinline height="100%" style="border-radius: 10px;">
-              <source src="./static/videos/mb/mb_assembly_frontview_4x.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">Full motherboard assembly sequence showing CPU, GPU, and RAM installation (4x speed)</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <!--/ Long-Horizon Assembly. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Work</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            <span class="costream">CoStream</span> builds on recent advances in foundation models for robotics and contact-rich manipulation.
-          </p>
-          <p>
-            <strong>Foundation Models in Robotics:</strong> Recent work has explored using large language models and vision-language models for robot control, including <a href="https://voxposer.github.io/">VoxPoser</a> for compositional manipulation and RT-1 for generalist robotics policies.
-          </p>
-          <p>
-            <strong>Contact-Rich Manipulation:</strong> Tactile sensing and force control have been explored for precision manipulation tasks, with methods leveraging GelSight sensors and compliant control strategies.
-          </p>
-          <p>
-            <strong>Compositional Modeling:</strong> Inspired by behavior-based robotics, where complex behavior emerges from composing simple sensory behaviors, <span class="costream">CoStream</span> composes semantic, predictive, and reactive behaviors in parallel over a shared SE(3) interface &mdash; avoiding both the hand-specified interfaces of Task and Motion Planning (TAMP) and the retraining requirements of monolithic end-to-end policies such as <span style="white-space: nowrap;">&pi;<sub>0.5</sub></span>.
-          </p>
-          <p>
-            <strong>World Models for Robotics:</strong> Video generation models have recently been applied to robot planning, enabling visual imagination of future trajectories for motion planning and control.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
 
   </div>
 </section>
@@ -463,11 +537,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{costream2026,
-  title     = {CoStream: Composing Simple Behaviors for Generalizable Complex Manipulation},
-  author    = {Anonymous Author(s)},
-  booktitle = {Conference on Robot Learning (CoRL)},
-  year      = {2026}
+    <pre><code>@misc{costream2026,
+  title  = {CoStream: Composing Simple Behaviors for Generalizable Complex Manipulation},
+  author = {Chen, Haonan and Ma, Yuxiang and Tian, Stephen and Han, Xiaoshen and Huang, Wenlong and Wu, Feiyang and Li, Yunzhu and Wu, Jiajun and Adelson, Edward H. and Du, Yilun},
+  year   = {2026},
+  note   = {Manuscript under review}
 }</code></pre>
   </div>
 </section>
@@ -477,7 +551,7 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./_CoRL_2026__CoStream.pdf">
+         href="./CoStream_arxiv.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
     </div>
