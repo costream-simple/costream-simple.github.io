@@ -529,6 +529,27 @@ body { padding-top: var(--nav-height); }
   transition: color 0.16s ease, background-color 0.16s ease;
 }
 .nav-sections a:hover { color: var(--accent-strong); background: var(--accent-soft); }
+.nav-sections a.is-active { color: var(--accent-strong); background: var(--accent-soft); font-weight: 600; }
+
+/* ── BibTeX copy button ── */
+.bibtex-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.bibtex-head .title { margin-bottom: 0; }
+.bibtex-copy {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 13px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+  border: 1px solid rgba(44, 123, 254, 0.22);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.16s ease, background-color 0.16s ease, transform 0.16s ease;
+}
+.bibtex-copy:hover { color: #fff; background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+.bibtex-copy.is-copied { color: #fff; background: #2a9d5c; border-color: #2a9d5c; }
 .nav-cta {
   display: inline-flex;
   align-items: center;

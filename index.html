@@ -31,6 +31,7 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
   <script src="./static/js/charts.js"></script>
+  <script defer src="./static/js/nav.js"></script>
 </head>
 <body>
 
@@ -315,6 +316,7 @@
     <div class="columns is-centered" id="assembly">
       <div class="column is-full-width">
         <h2 class="title is-3 section-accent">Long-Horizon Motherboard Assembly</h2>
+        <p class="claim-line">One sequence. CPU, GPU, RAM. Zero retraining in between.</p>
 
         <div class="content has-text-justified">
           <p>
@@ -339,6 +341,7 @@
     <div class="columns is-centered" id="everyday">
       <div class="column is-full-width">
         <h2 class="title is-3 section-accent">Everyday Manipulation</h2>
+        <p class="claim-line">Same behaviors, no new demos &mdash; they just transfer.</p>
 
         <div class="content has-text-justified">
           <p>
@@ -399,6 +402,7 @@
     <div class="columns is-centered" id="perturbation">
       <div class="column is-full-width">
         <h2 class="title is-3 section-accent">Robustness to Human Perturbations</h2>
+        <p class="claim-line">Shove it mid-task. It recovers in real time.</p>
 
         <div class="content has-text-justified">
           <p>
@@ -438,6 +442,7 @@
     <div class="columns is-centered has-text-centered" id="method">
       <div class="column is-full-width">
         <h2 class="title is-3 section-accent">Predictive Behavior</h2>
+        <p class="claim-line">It imagines trajectories, then picks the one that works.</p>
         <div class="content has-text-justified">
           <p>
             The predictive behavior uses a video world model to "imagine" candidate trajectories from the current image and step instruction. A VLM critic selects the rollout that best satisfies the semantic and safety constraints, and a 3D keypoint tracker lifts it into an object-centric motion prior.
@@ -470,6 +475,7 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3 section-accent">Failure Cases</h2>
+        <p class="claim-line">Where it still breaks &mdash; and why.</p>
 
         <div class="content has-text-justified">
           <p>
@@ -505,8 +511,13 @@
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{costream2026,
+    <div class="bibtex-head">
+      <h2 class="title">BibTeX</h2>
+      <button type="button" id="bibtex-copy" class="bibtex-copy" aria-label="Copy BibTeX citation">
+        <i class="far fa-copy"></i>&nbsp;<span class="bibtex-copy-label">Copy</span>
+      </button>
+    </div>
+    <pre><code id="bibtex-code">@misc{costream2026,
   title  = {CoStream: Composing Simple Behaviors for Generalizable Complex Manipulation},
   author = {Chen, Haonan and Ma, Yuxiang and Tian, Stephen and Han, Xiaoshen and Huang, Wenlong and Wu, Feiyang and Li, Yunzhu and Wu, Jiajun and Adelson, Edward H. and Du, Yilun},
   year   = {2026},
