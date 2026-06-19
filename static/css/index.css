@@ -28,6 +28,20 @@ body {
   font-family: 'Google Sans', sans-serif;
 }
 
+/* Widen the hero teaser beyond the default desktop column for a bigger,
+   more engaging first impression while keeping it framed and centered. */
+.teaser .container.is-max-desktop {
+  max-width: 1240px;
+  width: 92%;
+}
+#teaser {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 18px 44px rgba(0,0,0,0.12);
+}
+
 
 .publication-title {
 }
