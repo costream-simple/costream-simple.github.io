@@ -18,6 +18,20 @@ body {
   color: #2c7bfe;
 }
 
+.word-simple {
+  color: #2c7bfe;
+}
+
+.word-complex {
+  color: #f5a623;
+}
+
+/* In the main title, keep CoStream neutral so the simple/complex
+   accents carry the contrast. CoStream stays blue everywhere else. */
+.publication-title .costream {
+  color: inherit;
+}
+
 
 .teaser .hero-body {
   padding-top: 0;
