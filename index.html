@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="description"
@@ -9,11 +9,9 @@
   <title>CoStream: Composing Simple Behaviors for Generalizable Complex Manipulation</title>
 
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;650;700&display=swap"
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -23,7 +21,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="stylesheet" href="./static/css/research.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -35,24 +33,7 @@
 </head>
 <body>
 
-<nav class="site-nav" role="navigation" aria-label="main navigation">
-  <a class="site-mark" href="#top"><span class="mark-accent">Co</span>Stream</a>
-  <div class="nav-right">
-    <div class="nav-sections">
-      <a href="#why">Why</a>
-      <a href="#results">Results</a>
-      <a href="#assembly">Assembly</a>
-      <a href="#everyday">Everyday</a>
-      <a href="#perturbation">Robustness</a>
-      <a href="#method">Predictive</a>
-      <a href="#related">Related</a>
-      <a href="#BibTeX">BibTeX</a>
-    </div>
-    <a class="nav-cta" href="https://arxiv.org/abs/2606.26423" target="_blank" rel="noopener">
-      <i class="ai ai-arxiv"></i>&nbsp;arXiv
-    </a>
-  </div>
-</nav>
+<a class="skip-link" href="#abstract">Skip to content</a>
 
 
 <section class="hero" id="top">
@@ -113,6 +94,17 @@
             </div>
 
           </div>
+          <nav class="nav-sections" aria-label="Page sections">
+            <a href="#abstract">Abstract</a>
+            <a href="#why">Why CoStream</a>
+            <a href="#results">Results</a>
+            <a href="#assembly">Assembly</a>
+            <a href="#everyday">Everyday</a>
+            <a href="#perturbation">Robustness</a>
+            <a href="#method">Predictive</a>
+            <a href="#related">Related</a>
+            <a href="#BibTeX">BibTeX</a>
+          </nav>
         </div>
       </div>
     </div>
@@ -194,7 +186,7 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3" id="abstract">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Long-horizon, contact-rich manipulation &mdash; such as seating a GPU into a PCIe slot &mdash; demands both millimeter precision and generalization to new tasks. Classical pipelines achieve precise control through brittle, task-specific interfaces that need costly redesigns, while monolithic policies generalize better but lose precision on out-of-distribution tasks unless retrained. Both assume a capability, once acquired, must ship as a rigid whole rather than being freely decomposed and recomposed.
@@ -600,4 +592,3 @@
 
 </body>
 </html>
-
